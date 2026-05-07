@@ -40,18 +40,21 @@ def main():
     if serv_sock.listen(2) == -1: # 책은 5개이나 2개로만 해봄ㅇ
         error_handling("listen() error")
         
-        
-    
+    for i in range(2) : #두번 반복한다
     #5. accept()
-    try:
-        clnt_sock, clnt_addr = serv_sock.accept()
-    except socket.error:
-        error_handling("accept() error")
-        
-    #6. write()
-    message = "hello this is server speaking"
-    clnt_sock.send(message.encode('utf-8'))
-    clnt_sock.close()
+        try:
+            clnt_sock, clnt_addr = serv_sock.accept()
+        except socket.error:
+            error_handling("accept() error")    
+        print(f"Connected client: {i+1}")
+        while True:
+            message = clnt_sock.recv(1024)
+            if not message:
+                break       
+            #6. write()
+            clnt_sock.send(message)
+        clnt_sock.close()
+        print(f"Client {i+1} disconnected")
     serv_sock.close()
     
     # C언어 : ifndef
