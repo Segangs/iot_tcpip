@@ -37,9 +37,11 @@ def main():
         
         
     #4. listen() 
-    if serv_sock.listen(5) == -1:
+    if serv_sock.listen(2) == -1: # 책은 5개이나 2개로만 해봄ㅇ
         error_handling("listen() error")
         
+        
+    
     #5. accept()
     try:
         clnt_sock, clnt_addr = serv_sock.accept()
