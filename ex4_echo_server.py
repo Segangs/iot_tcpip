@@ -32,6 +32,7 @@ def main():
     #3. 초기화
     try:
         serv_sock.bind((serv_ip,serv_port))
+        print("Server started")
     except socket.error:
         error_handling("bind() error")
         
