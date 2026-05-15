@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인</title>
+    <link rel="stylesheet" href="ex30_front_css_basic.css">
+    <style>
+        div, p {
+            color: blue;
+        }
+
+        div p {
+            color: red;
+        }
+
+        #id1 {
+            color: red;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+        .c1 a[href]{
+            color:green;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c1">
+        <a href="">a1</a>
+    </div>
+    <p>나는 p tag 나도 파란색</p>
+    <div>
+        <p>
+            나는 빨간색
+        </p>
+    </div>
+
+    <div style="color:green">div이다</div>
+    <div>blue div이다</div>
+    <!-- id는 한개 적용 가능 -->
+    <div id="id1">blue div이다</div>
+
+    <!-- class는 여러개 적용 가능 -->
+    <div class="yellow">blue div이다</div>
+    <div class="yellow">blue div이다</div>
+
+    <script>
+        function my_display(x) {
+            document.getElementById.innerHTML = "ㅋㅋ"
+        }
+    </script>
+    <button onclick="my_display()">ㅋㅋ</button>
+
+</body>
+
+</html>

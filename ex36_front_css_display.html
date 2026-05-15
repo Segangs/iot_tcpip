@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .toBlock {
+            display: block;
+        }
+
+        .toInline {
+            display: inline;
+            width:100px;
+            height: 100px;
+            padding: 50px;
+            border: 1px solid;
+        }
+
+        .toNone {
+            display: none;
+        }
+        .toInlineBlock {
+            display: inline-block;
+            width:200px; height:100px; padding:50px;
+            border: 1px solid;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p>block element : p, div 한줄씩 차지</p>
+    <p style="background-color: red;">첫번째 p</p>
+    <p style="background-color: blue;">두번째 p</p>
+
+    <p> inline element : img, span 컨텐츠 필요시만큼 차지</p>
+    <img src="img/wallpaper.jpg" width="200px">
+    <img src="img/wallpaper.jpg" width="200px">
+
+    <div>
+        <h1>display: block</h1>
+        <span class="toBlock">span to div</span>
+        <span class="toBlock">span to div</span>
+        <span class="toBlock">span to div</span>
+
+    </div>
+    <div>
+        <h1>display: inline</h1>
+        <div class="toInline">div to span</div>
+        <div class="toInline">div to span</div>
+        <div class="toInline">div to span</div>
+    </div>
+
+    <div>
+        <h1>display: inline-block</h1>
+        <div class="toInlineBlock">div to InlineBlock</div>
+        <div class="toInlineBlock">div to InlineBlock</div>
+        <div class="toInlineBlock">div to InlineBlock</div>
+    </div>
+
+    <div>
+        <h1>display: none</h1>
+        <div class="toNone">div to none</div>
+        <div class="toNone">div to none</div>
+        <div class="toNone">div to none</div>
+    </div>
+
+</body>
+
+</html>

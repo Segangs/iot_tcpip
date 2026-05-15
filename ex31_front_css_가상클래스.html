@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navi a:link, .navi a:visited{ 
+            text-decoration: none;
+            color:white;
+            background-color:gray; padding:10px; border-radius: 3px;
+        }
+        .navi a:hover, .navi a:focus {
+            background-color: black;
+            color: white;
+        }
+        .navi a:active{
+            font-size:2em;
+        }
+        .navi ul {list-style:none; display:flex;}
+        /* .navi ul li {float: left; width:150px} */
+        .navi ul li {width:150px}
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>:link</p>
+        <p>방문하지 않았을 때 - 파란 밑줄</p>
+        <p>:visited</p>
+        <p>방문한적이 있을때 - 보라색 밑줄</p>
+        <P>:hover</P>
+        <p>마우스를 올려두고 아직 클릭하지 않았을때</p>
+        <p>:active</p>
+        <p>클릭했을 때</p>
+        <p>:focus</p>
+        <p>마우스를 올려두거나 tab으로 초점을 두었을때</p>
+    </div>
+
+    
+
+    <nav class="navi">
+        <ul>
+            <li><a href="intro">안내</a></li>
+            <li><a href="room">객실</a></li>
+            <li><a href="price">요금</a></li>
+            <li><a href="reservation">예약</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="contents">
+        <div id="intro">안내 ************************************************************************</div>
+        <div id="room">객실 ************************************************************************</div>
+        <div id="price">요금 ************************************************************************</div>
+        <div id="reservation">예약 ************************************************************************</div>
+
+    </div>
+</body>
+
+</html>

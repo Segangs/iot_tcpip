@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(233, 233, 233);
+}
+
+.login1 {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 400px;
+    margin: 50px auto;
+    padding: 10px;
+}
+
+.login1 legend {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.login1 ul li {
+    list-style: none;
+    line-height: 35px;
+    display : flex;
+    align-items: center;
+}
+
+.login1 label {
+    width: 120px;
+    flex-shrink:0;    
+}
+
+.login1 input{
+    width:150px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 3px 0px;
+}
+
+.login1 input[required]{
+    border: 1px solid rgb(255, 123, 0);
+}
+
+.login1 input[readonly]{
+    border : none;
+}
+
+.login1 button{
+    border:1px solid #6699db;
+    border-radius: 20px;
+    display:block;
+    margin:0 auto;
+    padding : 5px 50px;
+}

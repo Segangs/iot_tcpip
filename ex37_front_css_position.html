@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container-static,
+        .container-relative {
+            background-color: gainsboro;
+        }
+
+        .test-static {
+            background-color: whitesmoke;
+            margin: 5px;
+            padding: 5px;
+            position: static;
+        }
+
+        .test-relative {
+            background-color: whitesmoke;
+            margin: 5px;
+            padding: 5px;
+            position: static;
+        }
+
+        #test-relative-3 {
+            left: 5px;
+            top: 3px;
+        }
+
+        .container-fixed {
+            background-color: blue;
+            position: fixed;
+            width: 200px;
+            height: 50px;
+            left: 0px;
+            top: 0px;
+        }
+
+        .test-fixed {}
+
+        .container-absolute {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-image: url(img/wallpaper.jpg)
+        }
+
+        .test-absolute {
+            background-color: white;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-static">
+        <div class="test-static">static content 1</div>
+        <div class="test-static">static content 2</div>
+        <div class="test-static">static content 3</div>
+        <div class="test-static">static content 4</div>
+    </div>
+
+    <div class="container-relative">
+        <div class="test-relative">relative content 1</div>
+        <div class="test-relative">relative content 2</div>
+        <div class="test-relative" id="test-relative-3">relative content 3</div>
+        <div class="test-relative">relative content 4</div>
+    </div>
+    <div class="container-fixed">
+        fixed content
+    </div>
+    <div class="container-absolute">
+        <div class="test-absolute">
+            absoluted content
+        </div>
+    </div>
+
+</body>
+
+</html>

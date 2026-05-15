@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1000px;
+            margin: 20px auto;
+        }
+
+        .prod-list {
+            list-style: none;
+        }
+
+        .prod-list li {
+            float: left;
+            position: relative;
+        }
+
+        .prod-list .caption {
+            position: absolute;
+            top: 200px;
+            width: 200px;
+            height: 160px;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: 1s ease;
+        }
+
+        .prod-list li:hover .caption {
+            transform: translateY(-200px);
+            opacity: 1;
+        }
+
+        .caption h2,
+        .caption p {
+            color: white;
+            text-align: left;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>상품 목록</h1>
+        <ul class="prod-list">
+            <li><img src="img/water_melon.jpg">
+                <div class="caption">
+                    <h2>수박</h2>
+                    <p>시원한 충청도 수박</p>
+                    <p>20,000원</p>
+                </div>
+            </li>
+            <li><img src="img/banana.jpg">
+                <div class="caption">
+                    <h2>바나나</h2>
+                    <p>맛좋은 필리핀 바나나</p>
+                    <p>9,000원</p>
+                </div>
+            </li>
+            <li><img src="img/owl.jfif">
+                <div class="caption">
+                    <h2>부엉이</h2>
+                    <p>당도최고 미국산 부엉이</p>
+                    <p>13,000원</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
