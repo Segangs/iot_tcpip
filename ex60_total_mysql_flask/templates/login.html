@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+{% block content %}
+<h2>로그인</h2>
+<form id="loginform">
+    <input type="text" id="name" placeholder="사용자 이름" required>
+    <input type="password" id="password" placeholder="비밀번호" required>
+    <button type="submit">로그인</button>
+</form>
+
+<p>계정이 없으신가요? <a href="register_page">회원가입</a></p>
+{% endblock %}
+
+<script>
+    document.getElementById('loginform').addEventListener('submit', 
+    //입력(e)가 있으면 출력 => 해라.
+    async (e) => {
+        e.preventDefault(); //디폴트 동작을 무시해라.
+        const name = document.getElementById('name').value // name ID의 값(value)만 빼다가 name 변수에 넣어라치
+        const password = document.getElementById('password').value;
+        const response = await fetch('/api/login', {
+            method:'POST', 
+            headers: {'Content-Type':'application/json'},
+            body:JSON.stringify({name, password}) // 한줄로 보낸다
+        });
+        const result = await response.json(); // json 으로 응답을 받는다. // ajax는 old버전, axios는 호환성이 떨어질수 있다.(서버에서 받지 못한다는 등)
+        if(response.ok && result.success){
+            window.location.href = '/books';
+        }else{
+            alert(result.message || '로그인 실패')
+        }
+
+
+    }
+
+
+    )
+</script>

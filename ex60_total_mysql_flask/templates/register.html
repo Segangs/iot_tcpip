@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+{% block content %}
+<h2>회원가입</h2>
+<form id="registerform">
+    <input type="text" id="name" placeholder="사용자 이름(로그인 ID)" required>
+    <input type="text" id="address" placeholder="주소" required>
+    <input type="text" id="phone" placeholder="전화번호" required>
+    <input type="password" id="password" placeholder="비밀번호" required>
+    <button type="submit">회원가입</button>
+</form>
+
+<p> ID/PW가 생각났나요? <a href="/">로그인 하러가기</a></p>
+{% endblock %}
+
+<script>
+    document.getElementById('registerform').addEventListener('submit', 
+    //입력(e)가 있으면 출력 => 해라.
+    async (e) => {
+        e.preventDefault(); //디폴트 동작을 무시해라.
+        const data = {
+            name : document.getElementById('name').value,
+            address : document.getElementById('address').value,
+            phone : document.getElementById('phone').value,
+            password : document.getElementById('password').value
+        }
+        const response = await fetch('/api/register', {
+            method:'POST', 
+            headers: {'Content-Type':'application/json'},
+            body:JSON.stringify(data) // 한줄로 보낸다
+        });
+        const result = await response.json(); // json 으로 응답을 받는다. // ajax는 old버전, axios는 호환성이 떨어질수 있다.(서버에서 받지 못한다는 등)
+        if(response.ok && result.success){
+            window.location.href = '/';
+        }else{
+            alert('회원가입 실패')
+        }
+
+
+    }
+
+
+    )
+</script>
