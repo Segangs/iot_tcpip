@@ -3,7 +3,7 @@
 import socket
 def main():
     host = '127.0.0.1'
-    port = 8000
+    port = 1818
     threshold = 30.0 
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((host, port))
