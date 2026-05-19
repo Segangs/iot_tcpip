@@ -1,0 +1,60 @@
+[33mcommit c006fb62984024a7e6f3296f9b01f7e43fcf2314[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: 171f200 b680371
+Author: Segangs <woomahha@gmail.com>
+Date:   Mon May 18 15:28:05 2026 +0900
+
+    0518 수업
+
+[33mcommit 171f2008e4e317fe68b658e8914bc3ef4e54beba[m
+Author: Segangs <woomahha@gmail.com>
+Date:   Mon May 18 15:28:04 2026 +0900
+
+    0518 탱크절 수업
+
+[33mcommit b680371ebf4340db3a028cde75dcaa7c84f550fc[m
+Author: segangs <woomahha@gmail.com>
+Date:   Sat May 16 20:36:45 2026 +0900
+
+    Update .gitignore: add common ignores
+
+[33mcommit 78501cbe748c0bca0c9158a43897613b9a53946c[m
+Author: segangs <woomahha@gmail.com>
+Date:   Sat May 16 20:35:35 2026 +0900
+
+    Add .gitignore: ignore .DS_Store
+
+[33mcommit 7d0bf26aa663f0bae9145d7aa71f2002e28255d8[m
+Author: Segangs <woomahha@gmail.com>
+Date:   Fri May 15 15:25:39 2026 +0900
+
+    0515 HTML/CSS
+
+[33mcommit 718cb007607d5fa490a6b7c70d9109294fde211e[m
+Author: Segangs <woomahha@gmail.com>
+Date:   Mon May 11 17:27:30 2026 +0900
+
+    0511 소켓서버, 플라스크, jinja
+
+[33mcommit ae1133a283c6a55a0c51324a64aa9834e0c66ffe[m
+Author: Segangs <woomahha@gmail.com>
+Date:   Fri May 8 17:27:42 2026 +0900
+
+    0508 수업
+
+[33mcommit b18f8298cf67d742d16f79489457da2045ba53ad[m
+Author: Segangs <woomahha@gmail.com>
+Date:   Thu May 7 17:30:15 2026 +0900
+
+    0507 추가
+
+[33mcommit 710540cffc1852fedf378e0a34c64f29c67e0918[m
+Author: Segangs <woomahha@gmail.com>
+Date:   Thu May 7 17:21:12 2026 +0900
+
+    0507 추가
+
+[33mcommit 10bd7443da6c8a9d5bb5f1eaffe3bbc4d48aafd8[m
+Author: Segangs <woomahha@gmail.com>
+Date:   Thu May 7 10:40:56 2026 +0900
+
+    git commit -m "Initial commit: Add oneshot server implementation and test file"

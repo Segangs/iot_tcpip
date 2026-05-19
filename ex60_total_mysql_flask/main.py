@@ -39,7 +39,16 @@ from datetime import datetime
 from dotenv import load_dotenv
 import os
 
-#env file 을 관리하는 이유: 깃허브 올릴때 깃이그노어 파일에 env를 등록
+#env file 을 관리하는 이유: 깃허브 올릴때 깃이그노어 파일에 .env를 등록
+# .env파일 내용
+# MYSQL_HOST=localhost
+# MYSQL_USER=root
+# MYSQL_PASSWORD=1234
+# MYSQL_DB=bookstore_flask
+# FLASK_SECRET_KEY = bookstore
+
+
+
 
 load_dotenv()
 
@@ -61,10 +70,69 @@ def index():
         return render_template('login.html') #redirect(url_for('/books_page'))
     return render_template('login.html')
 
-@app.route('/register_page')
-def register_page():
-    return render_template('register.html')
+def index():
+    if is_logged_in(): 
+        return render_template('login.html') #redirect(url_for('/books_page'))
+    return render_template('login.html')
 
+@app.route('/books')
+def books_page():
+    if not is_logged_in() : return redirect(url_for('index'))
+    return render_template('books.html')
+
+@app.route('/add_book')
+def add_books_page():
+    if not is_logged_in() : return redirect(url_for('index'))
+    return render_template('add_books.html')
+
+@app.route('/api/books', methods=['GET'])
+def api_get_books() :
+    cur = mysql.connection.cursor()
+    cur.execute("SERECT * FROM book")
+    books = cur.fetchall()
+    cur.close()
+    return jsonify(books)
+
+@app.route('/api/add_books', methods=['POST'])
+def add_books() :
+    data = request.get_json()
+    cur = mysql.connection.cursor()
+    cur.execute("INSERT INTO orders(bookname, publisher, price) values (%s, %s, %s)", (data['bookname'], data['publisher'], data['price']))
+    mysql.connection.commit()
+    return jsonify({"success":True})
+
+@app.route('/api/order', methods=['POST'])
+def api_order() :
+    data = request.get_json()
+    cur = mysql.connection.cursor()
+    cur.execute("INSERT INTO orders(custid, bookid, saleprice, orderdate) values (%s, %s, %s, %s)", (session['custid'], data['bookid'], data['price'], datatime.now().date()))
+    mysql.connection.commit()
+    return jsonify({"success":True})
+
+@app.route('/my_orders')
+def my_order_page():
+    if not is_logged_in(): return redirect(url_for('index'))
+    return render_template('my_orders.html')
+
+
+@app.route('/api/my_orders', methods=['GET'])
+def api_get_orders() :
+    cur = mysql.connection.cursor()
+    cur.execute("""
+                SELECT o.orderid, o.orderdate, o.saleprice, b.book
+                FROM orders o JOIN book b
+                ON o.bookid = b.bookid
+                where o.custid =%s
+                """, [session['custid']])
+    orders = cur.fetchall()
+    cur.close()
+    return jsonify(orders)
+
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
 
 #수신하고 DB에 insert. (비밀번호는 암호화)
 @app.route('/api/register', methods=['POST'])
